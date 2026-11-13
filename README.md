@@ -8,8 +8,8 @@ I am a **Senior Software Engineer** based in Dhaka, Bangladesh, with **8.5 years
 
 - **Location:** Dhaka, Bangladesh
 - **Email:** [ry.debasis@gmail.com](mailto:ry.debasis@gmail.com)
-- **LinkedIn:** [://linkedin.com](https://www.://linkedin.com)
-- **GitHub:** [://github.com](https://://github.com)
+- **LinkedIn:** [swe-debasis-roy](https://www.linkedin.com/in/swe-debasis-roy)
+- **GitHub:** [roydebasis](https://github.com/roydebasis)
 
 ---
 
