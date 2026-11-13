@@ -1,6 +1,6 @@
 # Debasis Roy — Senior Software Engineer
 
-Welcome to the source repository for my personal portfolio website, hosted at **[roydebashish.github.io](https://github.io)**.
+Welcome to the source repository for my personal portfolio website, hosted at **[roydebasis.github.io](https://github.io)**.
 
 ## 👨‍💻 About Me
 
