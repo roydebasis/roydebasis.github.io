@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debasis Roy — Senior Software Engineer</title>
+<meta name="description" content="Debasis Roy is a Senior Software Engineer in Dhaka with 8.5 years of experience building business-critical web applications with PHP, Laravel, Node.js, Vue.js, TypeScript and MySQL.">
+<meta property="og:title" content="Debasis Roy — Senior Software Engineer">
+<meta property="og:description" content="PHP · Laravel · Node.js · MySQL · Vue.js · TypeScript · AI-powered workflow automation. 8.5 years building business-critical backends.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f0e0c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f0e0c'/><text x='50%' y='56%' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='30' fill='%23ff6a3d'>dr</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f0e0c;
+    --bg-2:#161512;
+    --card:#1b1a17;
+    --line:#2a2824;
+    --text:#ece8e1;
+    --muted:#9c968c;
+    --dim:#6b665e;
+    --accent:#ff6a3d;
+    --accent-soft:rgba(255,106,61,.12);
+    --green:#7ccf8a;
+    --serif:"Instrument Serif", Georgia, serif;
+    --sans:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{ /* subtle grid */
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:64px 64px;opacity:.18;
+    mask-image:radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:#000}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+  .mono{font-family:var(--mono)}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,14,12,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;transition:border-color .3s;
+  }
+  nav.scrolled{border-bottom-color:var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:-.02em}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{
+    font-family:var(--mono);font-size:13px;padding:8px 14px;border:1px solid var(--line);
+    border-radius:8px;transition:all .2s;
+  }
+  .nav-cta:hover{border-color:var(--accent);color:var(--accent)}
+  .menu-btn{display:none;background:none;border:0;color:var(--text);cursor:pointer;padding:6px}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:96px 0 80px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .status{
+    display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;
+    color:var(--muted);padding:6px 12px;border:1px solid var(--line);border-radius:100px;background:var(--bg-2);
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(124,207,138,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(124,207,138,0)}100%{box-shadow:0 0 0 0 rgba(124,207,138,0)}}
+  h1{
+    font-family:var(--serif);font-weight:400;font-size:clamp(46px,6.4vw,84px);
+    line-height:.98;letter-spacing:-.02em;margin:28px 0 24px;
+  }
+  h1 em{color:var(--accent);font-style:italic}
+  .lede{font-size:18.5px;color:var(--muted);max-width:540px}
+  .lede strong{color:var(--text);font-weight:500}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:15px;
+    padding:13px 20px;border-radius:10px;transition:transform .2s, background .2s, border-color .2s;
+  }
+  .btn-primary{background:var(--accent);color:#140a05}
+  .btn-primary:hover{transform:translateY(-2px);background:#ff7d55}
+  .btn-ghost{border:1px solid var(--line);background:var(--bg-2)}
+  .btn-ghost:hover{border-color:var(--muted);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+
+  /* pipeline card */
+  .pipe{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.02) inset;
+  }
+  .pipe-head{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .pipe-head i{width:11px;height:11px;border-radius:50%;background:#3a3732}
+  .pipe-head i:first-child{background:#ff5f57}.pipe-head i:nth-child(2){background:#febc2e}.pipe-head i:nth-child(3){background:#28c840}
+  .pipe-head span{margin-left:10px;font-family:var(--mono);font-size:12px;color:var(--dim)}
+  .pipe-body{padding:22px 20px 18px;font-family:var(--mono);font-size:13px}
+  .step{display:flex;align-items:center;gap:14px;padding:10px 12px;border-radius:9px;position:relative;opacity:.35;transition:opacity .4s, background .4s}
+  .step.on{opacity:1;background:rgba(255,255,255,.03)}
+  .step.on .tick{color:var(--green)}
+  .step .ico{
+    width:30px;height:30px;flex:none;border-radius:8px;display:grid;place-items:center;
+    background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:600;
+  }
+  .step b{font-weight:500;color:var(--text)}
+  .step small{display:block;color:var(--dim);font-size:11.5px}
+  .tick{margin-left:auto;color:var(--dim);font-size:12px}
+  .conn{width:1px;height:10px;background:var(--line);margin-left:27px}
+  .pipe-foot{
+    display:flex;justify-content:space-between;padding:12px 20px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:11.5px;color:var(--dim);
+  }
+  .pipe-foot b{color:var(--accent);font-weight:500}
+
+  /* ---------- STATS ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;background:var(--bg-2);overflow:hidden}
+  .stat{padding:28px 26px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .n{font-family:var(--serif);font-size:52px;line-height:1;letter-spacing:-.02em}
+  .stat .n sup{font-size:24px;color:var(--accent);vertical-align:top;margin-left:2px}
+  .stat p{color:var(--muted);font-size:14px;margin-top:10px}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:110px 0 0}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:48px}
+  .sec-num{font-family:var(--mono);font-size:13px;color:var(--accent)}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5vw,56px);line-height:1;letter-spacing:-.015em}
+  h2 em{font-style:italic;color:var(--muted)}
+  .sec-line{flex:1;height:1px;background:var(--line);align-self:center}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .about p{color:var(--muted);font-size:17px;margin-bottom:18px}
+  .about p strong{color:var(--text);font-weight:500}
+  .principles{display:grid;gap:12px;align-content:start}
+  .pr{display:flex;gap:16px;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);transition:border-color .25s, transform .25s}
+  .pr:hover{border-color:#3d3a34;transform:translateX(4px)}
+  .pr .k{font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:3px;min-width:22px}
+  .pr h4{font-size:15px;font-weight:600;margin-bottom:2px}
+  .pr p{font-size:14px;margin:0;color:var(--muted)}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .sk{padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--bg-2);transition:border-color .25s}
+  .sk:hover{border-color:#3d3a34}
+  .sk.wide{grid-column:span 2}
+  .sk h3{font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-size:13.5px;padding:6px 11px;border-radius:7px;background:#23211d;border:1px solid #2e2c27;color:#d6d1c8;transition:all .2s}
+  .tag.hot{background:var(--accent-soft);border-color:rgba(255,106,61,.3);color:#ffb59c}
+  .tag:hover{border-color:var(--accent);color:var(--text)}
+
+  /* experience */
+  .exp{display:grid;grid-template-columns:260px 1fr;border-top:1px solid var(--line)}
+  .job{display:contents}
+  .job > div{padding:34px 0;border-bottom:1px solid var(--line)}
+  .job-meta{padding-right:32px !important}
+  .job-meta .yr{font-family:var(--mono);font-size:13px;color:var(--accent)}
+  .job-meta .co{font-size:18px;font-weight:600;margin-top:6px}
+  .job-meta .loc{font-size:13.5px;color:var(--dim);margin-top:2px}
+  .job-body h3{font-size:20px;font-weight:600;letter-spacing:-.01em;margin-bottom:12px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+  .badge{font-family:var(--mono);font-size:11px;font-weight:500;padding:3px 8px;border-radius:5px;background:rgba(124,207,138,.1);color:var(--green);border:1px solid rgba(124,207,138,.25)}
+  .job-body ul{list-style:none;display:grid;gap:9px}
+  .job-body li{color:var(--muted);font-size:15.5px;padding-left:22px;position:relative}
+  .job-body li::before{content:"→";position:absolute;left:0;color:var(--dim);font-family:var(--mono);font-size:13px;top:2px}
+  .sub-role{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line)}
+  .sub-role h4{font-size:15.5px;font-weight:600;margin-bottom:6px}
+  .sub-role h4 span{font-family:var(--mono);font-size:12.5px;color:var(--dim);font-weight:400;margin-left:8px}
+
+  /* projects */
+  .projects{display:grid;gap:20px}
+  .proj{
+    display:grid;grid-template-columns:1fr 1.25fr;border:1px solid var(--line);border-radius:18px;
+    background:var(--bg-2);overflow:hidden;transition:border-color .3s, transform .3s;
+  }
+  .proj:hover{border-color:#3d3a34;transform:translateY(-3px)}
+  .proj-l{padding:34px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+  .proj-l .yr{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+  .proj-l h3{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.05;margin:10px 0 12px;letter-spacing:-.01em}
+  .proj-l p{color:var(--muted);font-size:15.5px}
+  .proj-l .tags{margin-top:20px}
+  .proj-l .link{
+    margin-top:auto;padding-top:28px;font-family:var(--mono);font-size:13px;color:var(--accent);
+    display:inline-flex;align-items:center;gap:6px;width:max-content;
+  }
+  .proj-l .link:hover{text-decoration:underline;text-underline-offset:4px}
+  .proj-r{padding:34px}
+  .proj-r h4{font-family:var(--mono);font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;font-weight:500}
+  .proj-r ul{list-style:none;display:grid;gap:14px}
+  .proj-r li{font-size:15px;color:var(--muted);padding-left:22px;position:relative}
+  .proj-r li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:2px;background:var(--accent);opacity:.8}
+  .proj-r li strong{color:var(--text);font-weight:500}
+  .metric{
+    display:flex;align-items:baseline;gap:12px;margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid var(--line);
+  }
+  .metric .n{font-family:var(--serif);font-size:54px;line-height:1;color:var(--accent)}
+  .metric span{color:var(--muted);font-size:14.5px;line-height:1.4}
+
+  /* education */
+  .edu{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .ed{padding:26px;border:1px solid var(--line);border-radius:14px;background:var(--bg-2)}
+  .ed .t{font-family:var(--mono);font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}
+  .ed h3{font-size:17.5px;font-weight:600;margin:10px 0 4px;letter-spacing:-.01em}
+  .ed .w{color:var(--muted);font-size:14.5px}
+  .ed .y{font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-top:8px}
+  .ed p.d{color:var(--muted);font-size:14px;margin-top:12px;line-height:1.55}
+  .ed.award{background:linear-gradient(135deg, rgba(255,106,61,.10), transparent 60%), var(--bg-2);border-color:rgba(255,106,61,.25)}
+  .ed .row{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+
+  /* contact */
+  .contact{
+    margin:110px 0 0;padding:72px 56px;border:1px solid var(--line);border-radius:24px;
+    background:radial-gradient(ellipse at 100% 0%, rgba(255,106,61,.16), transparent 55%), var(--bg-2);
+    display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end;
+  }
+  .contact h2{font-size:clamp(42px,6vw,72px)}
+  .contact h2 em{color:var(--accent)}
+  .contact p{color:var(--muted);margin-top:18px;font-size:17px;max-width:460px}
+  .clist{display:grid;gap:10px}
+  .ci{
+    display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:12px;
+    background:rgba(15,14,12,.6);transition:all .2s;
+  }
+  .ci:hover{border-color:var(--accent);transform:translateX(4px)}
+  .ci svg{width:19px;height:19px;color:var(--accent);flex:none}
+  .ci .l{font-family:var(--mono);font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+  .ci .v{font-size:15px;font-weight:500}
+  .ci .arr{margin-left:auto;color:var(--dim);font-family:var(--mono)}
+  .copy{background:none;border:0;cursor:pointer;color:var(--dim);font-family:var(--mono);font-size:11.5px;margin-left:auto;padding:4px 8px;border-radius:6px;border:1px solid var(--line)}
+  .copy:hover{color:var(--text);border-color:var(--muted)}
+
+  footer{padding:48px 0 40px;display:flex;justify-content:space-between;color:var(--dim);font-size:13px;font-family:var(--mono)}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .no-js .rv{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .rv{opacity:1;transform:none;transition:none}
+    .dot{animation:none}
+    .step{opacity:1}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 960px){
+    .hero{grid-template-columns:1fr;padding-top:64px}
+    .about{grid-template-columns:1fr;gap:32px}
+    .skills{grid-template-columns:1fr 1fr}
+    .sk.wide{grid-column:span 2}
+    .proj{grid-template-columns:1fr}
+    .proj-l{border-right:0;border-bottom:1px solid var(--line)}
+    .contact{grid-template-columns:1fr;padding:48px 32px}
+  }
+  @media (max-width: 760px){
+    .nav-links{
+      display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;
+      background:var(--bg);border-bottom:1px solid var(--line);padding:8px 24px 16px;
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;border-bottom:1px solid var(--line)}
+    .nav-cta{display:none}
+    .menu-btn{display:block}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .exp{grid-template-columns:1fr}
+    .job-meta{padding-bottom:0 !important;border-bottom:0 !important}
+    .job-body{padding-top:14px !important}
+    .edu{grid-template-columns:1fr}
+    section{padding-top:84px}
+  }
+  @media (max-width: 520px){
+    .skills{grid-template-columns:1fr}
+    .sk.wide{grid-column:auto}
+    .stat{padding:22px 18px}
+    .stat .n{font-size:42px}
+    .proj-l,.proj-r{padding:26px 22px}
+    .contact{padding:40px 22px}
+    footer{flex-direction:column;gap:8px}
+  }
+</style>
+</head>
+<body class="no-js">
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo">debasis<span>.</span>roy</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="mailto:ry.debasis@gmail.com" class="nav-cta">ry.debasis@gmail.com</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="rv">
+      <span class="status"><span class="dot"></span>Open to new opportunities · Dhaka, BD</span>
+      <h1>Backends that keep the business <em>running.</em></h1>
+      <p class="lede">I'm <strong>Debasis Roy</strong>, a Senior Software Engineer with <strong>8.5 years</strong> of experience building business-critical web applications in <strong>PHP, Laravel</strong> and <strong>Node.js</strong>: REST APIs, well-designed MySQL schemas, and AI-powered automation for real business workflows.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">See my work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://github.com/roydebasis" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/swe-debasis-roy" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="pipe rv" aria-label="Example automation pipeline">
+      <div class="pipe-head"><i></i><i></i><i></i><span>funding-intake.pipeline</span></div>
+      <div class="pipe-body" id="pipe">
+        <div class="step"><div class="ico">@</div><div><b>Gmail inbox</b><small>new application email + attachments</small></div><span class="tick">✓</span></div>
+        <div class="conn"></div>
+        <div class="step"><div class="ico">n8n</div><div><b>Workflow trigger</b><small>identify form · route documents</small></div><span class="tick">✓</span></div>
+        <div class="conn"></div>
+        <div class="step"><div class="ico">AI</div><div><b>OpenAI extraction</b><small>bank statements → transactions</small></div><span class="tick">✓</span></div>
+        <div class="conn"></div>
+        <div class="step"><div class="ico">Σ</div><div><b>Underwriting scorecard</b><small>revenue · MCA · neg-balance days</small></div><span class="tick">✓</span></div>
+        <div class="conn"></div>
+        <div class="step"><div class="ico">✎</div><div><b>DocuSeal + GHL</b><small>contracts · signatures · CRM sync</small></div><span class="tick">✓</span></div>
+      </div>
+      <div class="pipe-foot"><span>status: <b id="pipeStatus">running</b></span><span>~300 applications / day</span></div>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <div class="stats rv">
+    <div class="stat"><div class="n">8.5<sup>yrs</sup></div><p>Building production web applications</p></div>
+    <div class="stat"><div class="n">~300</div><p>Funding applications processed daily</p></div>
+    <div class="stat"><div class="n">9</div><p>Third-party services &amp; APIs integrated</p></div>
+    <div class="stat"><div class="n">4</div><p>Companies shipped for since 2017</p></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="sec-head rv"><span class="sec-num">01</span><h2>About <em>me</em></h2><span class="sec-line"></span></div>
+    <div class="about">
+      <div class="rv">
+        <p>I specialize in the part of software most people never see: the <strong>APIs, databases and business logic</strong> that decide whether an application actually works when real money and real customers are involved.</p>
+        <p>Most recently I've been building the backend of a <strong>funding and loan management platform</strong>: turning stakeholder requirements into automated intake, AI-driven bank-statement analysis, underwriting scorecards and e-signature workflows.</p>
+        <p>I care about clean, maintainable code grounded in <strong>OOP and SOLID principles</strong>, and I'm comfortable across the stack, from Laravel and Express to Vue.js on the front end.</p>
+      </div>
+      <div class="principles rv">
+        <div class="pr"><span class="k">01</span><div><h4>Business logic first</h4><p>Complex rules (underwriting, finance, school admin) modeled clearly and correctly.</p></div></div>
+        <div class="pr"><span class="k">02</span><div><h4>Integrations that hold up</h4><p>Webhooks, payment gateways, CRMs and e-signatures wired together reliably.</p></div></div>
+        <div class="pr"><span class="k">03</span><div><h4>Automation with AI</h4><p>OpenAI + n8n pipelines that remove manual data entry from daily operations.</p></div></div>
+        <div class="pr"><span class="k">04</span><div><h4>Maintainable by design</h4><p>Service classes, repositories, queues and events: code the next engineer can extend.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="sec-head rv"><span class="sec-num">02</span><h2>Toolkit <em>&amp; skills</em></h2><span class="sec-line"></span></div>
+    <div class="skills">
+      <div class="sk wide rv">
+        <h3>Laravel &amp; Backend Engineering</h3>
+        <div class="tags">
+          <span class="tag hot">Laravel</span><span class="tag">MVC Architecture</span><span class="tag">Eloquent ORM</span><span class="tag">Migrations &amp; Seeders</span><span class="tag">Middleware</span><span class="tag">Auth &amp; Authorization</span><span class="tag">Queues &amp; Jobs</span><span class="tag">Events &amp; Listeners</span><span class="tag">Form Requests &amp; Validation</span><span class="tag">Service Classes</span><span class="tag">Repository Pattern</span>
+        </div>
+      </div>
+      <div class="sk rv">
+        <h3>Languages</h3>
+        <div class="tags"><span class="tag hot">PHP</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>Backend Runtimes</h3>
+        <div class="tags"><span class="tag hot">Laravel</span><span class="tag">Node.js</span><span class="tag">Express.js</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>API Development</h3>
+        <div class="tags"><span class="tag hot">RESTful APIs</span><span class="tag">JWT</span><span class="tag">API Authentication</span><span class="tag">Webhooks</span><span class="tag">Third-party APIs</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>Databases</h3>
+        <div class="tags"><span class="tag hot">MySQL</span><span class="tag">Redis</span></div>
+      </div>
+      <div class="sk wide rv">
+        <h3>Integrations</h3>
+        <div class="tags"><span class="tag">Gmail API</span><span class="tag">GoHighLevel (GHL)</span><span class="tag">DocuSeal</span><span class="tag">Twilio</span><span class="tag">SSLCommerz</span><span class="tag">bKash</span><span class="tag">Nagad</span><span class="tag">Payment Gateways</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>AI &amp; Automation</h3>
+        <div class="tags"><span class="tag hot">OpenAI API</span><span class="tag hot">n8n</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>Frontend</h3>
+        <div class="tags"><span class="tag">Vue.js</span><span class="tag">jQuery</span><span class="tag">Bootstrap</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>Architecture</h3>
+        <div class="tags"><span class="tag">SOLID Principles</span><span class="tag">OOP</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>Tools &amp; Practices</h3>
+        <div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Bitbucket</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="sec-head rv"><span class="sec-num">03</span><h2>Experience</h2><span class="sec-line"></span></div>
+    <div class="exp">
+
+      <div class="job rv">
+        <div class="job-meta"><div class="yr">2022 — Present</div><div class="co">Silicon Orchard Ltd.</div><div class="loc">Dhaka, Bangladesh</div></div>
+        <div class="job-body">
+          <h3>Senior Software Engineer <span class="badge">Current</span></h3>
+          <ul>
+            <li>Develop and maintain backend services and business workflows for a funding and loan management platform, translating stakeholder requirements into technical solutions.</li>
+            <li>Build AI-powered document-processing workflows with the OpenAI API to extract and analyze bank-statement data, funding applications and underwriting information.</li>
+            <li>Develop financial analysis and underwriting scorecards from parsed transaction data: monthly revenue, transfers, negative-balance days and low-balance indicators.</li>
+            <li>Automate funding-application intake through n8n and Gmail integrations, processing email attachments and forwarding application data into the platform.</li>
+            <li>Integrate GoHighLevel CRM, DocuSeal e-signatures and webhook-driven workflows to sync records, deliver documents and automate signing notifications.</li>
+            <li>Built Laravel applications with Eloquent ORM, migrations, middleware and reusable service classes; RESTful APIs with validation, authentication and authorization; and async processing with queues and jobs.</li>
+            <li>Coordinate development tasks, troubleshoot technical issues and support team members in delivering features.</li>
+          </ul>
+          <div class="sub-role">
+            <h4>Software Engineer <span>2022 — 2023</span></h4>
+            <ul><li>Developed core application features and backend services; promoted to Senior Software Engineer in January 2023.</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="job rv">
+        <div class="job-meta"><div class="yr">2020 — 2021</div><div class="co">Augnitive</div><div class="loc">Dhaka, Bangladesh</div></div>
+        <div class="job-body">
+          <h3>Software Engineer <span class="badge" style="background:var(--accent-soft);color:#ffb59c;border-color:rgba(255,106,61,.3)">★ Employee of the Month</span></h3>
+          <ul>
+            <li>Designed and implemented application features, integrating and enhancing backend data services and APIs.</li>
+            <li>Contributed to a custom CRM built with raw PHP and jQuery, integrating Twilio, SSLCommerz, bKash and Nagad.</li>
+            <li>Collaborated with project managers, developers, testers and designers to meet project goals and deliverables.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job rv">
+        <div class="job-meta"><div class="yr">2018 — 2020</div><div class="co">ST Solutions</div><div class="loc">Dhaka, Bangladesh</div></div>
+        <div class="job-body">
+          <h3>Software Engineer</h3>
+          <ul>
+            <li>Analyzed user requirements and provided design and programming support for web application enhancements.</li>
+            <li>Maintained and improved existing codebases and performed peer code reviews.</li>
+            <li>Wrote, tested and refined code with other developers to implement technical designs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job rv">
+        <div class="job-meta"><div class="yr">2017 — 2018</div><div class="co">Esoftarena Ltd.</div><div class="loc">Dhaka, Bangladesh</div></div>
+        <div class="job-body">
+          <h3>Web Developer</h3>
+          <ul><li>Developed custom WordPress themes and troubleshot content-related issues.</li></ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="sec-head rv"><span class="sec-num">04</span><h2>Selected <em>projects</em></h2><span class="sec-line"></span></div>
+    <div class="projects">
+
+      <article class="proj rv">
+        <div class="proj-l">
+          <span class="yr">2025 — Present</span>
+          <h3>True Advance Funding Inc.</h3>
+          <p>Funding management platform for application intake, underwriting, financial analysis and contract execution.</p>
+          <div class="tags"><span class="tag hot">Node.js</span><span class="tag hot">Express.js</span><span class="tag">TypeScript</span><span class="tag">MySQL</span><span class="tag">OpenAI</span><span class="tag">n8n</span></div>
+          <a class="link" href="https://trueadvance.biz" target="_blank" rel="noopener">trueadvance.biz ↗</a>
+        </div>
+        <div class="proj-r">
+          <div class="metric"><span class="n">~300</span><span>funding applications<br>processed every day</span></div>
+          <h4>What I built</h4>
+          <ul>
+            <li><strong>Automated intake:</strong> Gmail + n8n for form identification, data extraction, MySQL and GoHighLevel record creation, and underwriter assignment.</li>
+            <li><strong>Bank-statement parsing</strong> that extracts account and transaction data, detects MCA obligations, and identifies lenders, payment amounts and repayment frequency.</li>
+            <li><strong>Scorecard generation</strong> from revenue, transfers, negative- and low-balance days to support human underwriting decisions.</li>
+            <li><strong>DocuSeal integration</strong> for state-specific disclosures, contract delivery, signature tracking and webhook-driven stage transitions.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="proj rv">
+        <div class="proj-l">
+          <span class="yr">2022 — 2025</span>
+          <h3>VideoXRM</h3>
+          <p>AI-powered platform for organizing, searching and sharing video and audio content, with smart indexing, promotion, engagement and third-party integrations.</p>
+          <div class="tags"><span class="tag hot">PHP</span><span class="tag hot">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span></div>
+        </div>
+        <div class="proj-r">
+          <h4>What I built</h4>
+          <ul>
+            <li>Joined after the initial release and <strong>actively contributed</strong> to developing and expanding the remaining platform features.</li>
+            <li>Developed and enhanced <strong>Laravel backend functionality</strong> and integrated it with Vue.js front-end components.</li>
+            <li>Maintained existing modules and shipped new features as business requirements evolved.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="proj rv">
+        <div class="proj-l">
+          <span class="yr">2020 — 2021</span>
+          <h3>Shoroborno</h3>
+          <p>School management system covering attendance, grading, library, finances and parent access.</p>
+          <div class="tags"><span class="tag hot">PHP</span><span class="tag hot">Laravel</span><span class="tag">Blade</span><span class="tag">MySQL</span></div>
+          <a class="link" href="https://shoroborno.com/" target="_blank" rel="noopener">shoroborno.com ↗</a>
+        </div>
+        <div class="proj-r">
+          <h4>What I built</h4>
+          <ul>
+            <li>Extended the Laravel-based system with <strong>new features</strong> and enhancements to existing ones.</li>
+            <li>Implemented <strong>backend business logic</strong> and database-driven features across school-management modules.</li>
+            <li>Built and modified server-rendered interfaces with <strong>Laravel Blade</strong> templates.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="sec-head rv"><span class="sec-num">05</span><h2>Education <em>&amp; training</em></h2><span class="sec-line"></span></div>
+    <div class="edu">
+      <div class="ed rv">
+        <span class="t">Degree</span>
+        <h3>B.Sc. in Information Technology</h3>
+        <div class="w">Daffodil International Academy, Dhaka</div>
+        <div class="y">2012 — 2016</div>
+        <div class="row">
+          <span class="t">Higher Secondary</span>
+          <h3>HSC — Science</h3>
+          <div class="w">Dhaka State College, Dhaka</div>
+          <div class="y">2009 — 2011</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:16px">
+        <div class="ed rv">
+          <span class="t">Professional Training</span>
+          <h3>Web Application Development — PHP</h3>
+          <div class="w">BASIS Institute of Technology Management, Dhaka</div>
+          <div class="y">2016 · 3 months</div>
+          <p class="d">PHP, MySQL, HTML, CSS, Bootstrap, JavaScript and jQuery. Run by BASIS under SEIP and financed by the Ministry of Finance.</p>
+        </div>
+        <div class="ed award rv">
+          <span class="t">★ Award</span>
+          <h3>Employee of the Month</h3>
+          <div class="w">Augnitive</div>
+          <div class="y">February 2021</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact rv" id="contact">
+    <div>
+      <span class="sec-num">06 — Contact</span>
+      <h2 style="margin-top:16px">Let's build something <em>reliable.</em></h2>
+      <p>Looking for a backend engineer who can own APIs, data and integrations end to end? I'd love to hear about what you're building.</p>
+    </div>
+    <div class="clist">
+      <div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        <a href="mailto:ry.debasis@gmail.com"><div class="l">Email</div><div class="v">ry.debasis@gmail.com</div></a>
+        <button class="copy" id="copyBtn" type="button">copy</button>
+      </div>
+      <a class="ci" href="https://github.com/roydebashish" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        <div><div class="l">GitHub</div><div class="v">roydebashish</div></div><span class="arr">↗</span>
+      </a>
+      <a class="ci" href="https://linkedin.com/in/swe-debasis-roy" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        <div><div class="l">LinkedIn</div><div class="v">swe-debasis-roy</div></div><span class="arr">↗</span>
+      </a>
+      <div class="ci">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><div class="l">Location</div><div class="v">Dhaka, Bangladesh</div></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© <span id="yr">2026</span> Debasis Roy</span>
+    <a href="#top">back to top ↑</a>
+  </footer>
+</main>
+
+<script>
+  document.body.classList.remove('no-js');
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // nav border on scroll
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), {passive:true});
+
+  // mobile menu
+  const btn = document.getElementById('menuBtn'), links = document.getElementById('navLinks');
+  btn.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // reveal on scroll
+  const els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(el => io.observe(el));
+  } else els.forEach(el => el.classList.add('in'));
+
+  // pipeline animation
+  const steps = [...document.querySelectorAll('#pipe .step')];
+  const status = document.getElementById('pipeStatus');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { steps.forEach(s => s.classList.add('on')); status.textContent = 'complete'; }
+  else {
+    let i = 0;
+    setInterval(() => {
+      if (i === 0) { steps.forEach(s => s.classList.remove('on')); status.textContent = 'running'; }
+      if (i < steps.length) { steps[i].classList.add('on'); i++; }
+      else { status.textContent = 'complete'; i = 0; }
+      if (i === steps.length) status.textContent = 'complete';
+    }, 900);
+  }
+
+  // copy email
+  document.getElementById('copyBtn').addEventListener('click', e => {
+    navigator.clipboard?.writeText('ry.debasis@gmail.com').then(() => {
+      e.target.textContent = 'copied ✓';
+      setTimeout(() => e.target.textContent = 'copy', 1600);
+    });
+  });
+</script>
+</body>
+</html>
